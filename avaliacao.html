@@ -1,1 +1,168 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ConectaCampus | Avaliação</title><link rel="stylesheet" href="style.css"><script src="config.js" defer></script><script src="api.js" defer></script><script src="avaliacao.js" defer></script></head><body><main class="site"><header class="sitebar"><a class="wordmark" href="index.html"><span class="brandmark">C</span> ConectaCampus</a><span class="tag">UX Design · Grupo 4</span></header><section class="panel form-panel" id="evaluation"><span class="tag">Avaliação da experiência</span><h1>Como foi sua experiência?</h1><div class="info stack" id="pending" hidden><strong>Você tem um teste guiado em andamento.</strong><p>Retome a etapa pendente para completar a pesquisa comparativa, sem precisar começar novamente.</p><a class="linkbtn primary" href="teste.html?resume=1">Retomar pesquisa</a></div><div class="info stack" id="not-visited" hidden><p>Ainda não experimentou o protótipo? Explore antes de avaliar.</p><a class="linkbtn outline" href="prototipo.html">Abrir aplicativo</a></div><h2>Avaliação livre do protótipo</h2><p>Esta avaliação não inicia o teste guiado nem registra métricas de tempo e cliques. Use-a se você já experimentou o aplicativo. As opiniões serão analisadas separadamente da pesquisa comparativa.</p><form class="stack" id="feedback-form"><label class="option"><input type="checkbox" required id="consent"> Já utilizei o protótipo e concordo em participar voluntariamente.</label><p class="muted small">Não solicitamos nome ou e-mail. Não inclua dados pessoais nos comentários.</p><div id="ratings" class="stack"></div><label class="field">Qual foi sua maior dificuldade? (opcional)<textarea id="difficulty" maxlength="1000"></textarea></label><label class="field">O que você melhoraria? (opcional)<textarea id="suggestion" maxlength="1000"></textarea></label><button class="primary" id="send" type="submit">Enviar avaliação</button><p id="feedback-status" role="status"></p><a class="linkbtn outline" href="index.html">Voltar ao início</a></form></section><section class="panel form-panel" id="thanks" hidden><h1>Obrigado pela sua avaliação!</h1><p id="thanks-text"></p><a class="linkbtn primary" href="index.html">Voltar ao início</a></section></main></body></html>
+
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>ConectaCampus | Avaliação</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="config.js" defer></script>
+    <script src="api.js" defer></script>
+    <script src="avaliacao.js" defer></script>
+</head>
+
+<body>
+
+    <main class="site">
+
+        <!-- Cabeçalho -->
+        <header class="sitebar">
+
+            <a class="wordmark" href="index.html">
+                <span class="brandmark">C</span>
+                ConectaCampus
+            </a>
+
+            <span class="tag">UX Design · Grupo 4</span>
+
+        </header>
+
+        <!-- Avaliação da experiência -->
+        <section class="panel form-panel" id="evaluation">
+
+            <span class="tag">Avaliação da experiência</span>
+
+            <h1>Como foi sua experiência?</h1>
+
+            <!-- Pesquisa pendente -->
+            <div class="info stack" id="pending" hidden>
+
+                <strong>
+                    Você tem um teste guiado em andamento.
+                </strong>
+
+                <p>
+                    Retome a etapa pendente para completar a pesquisa
+                    comparativa, sem precisar começar novamente.
+                </p>
+
+                <a class="linkbtn primary"
+                    href="teste.html?resume=1">
+                    Retomar pesquisa
+                </a>
+
+            </div>
+
+            <!-- Orientação para novos participantes -->
+            <div class="info stack" id="not-visited" hidden>
+
+                <p>
+                    Ainda não experimentou o protótipo?
+                    Explore antes de avaliar.
+                </p>
+
+                <a class="linkbtn outline" href="prototipo.html">
+                    Abrir aplicativo
+                </a>
+
+            </div>
+
+            <h2>Avaliação livre do protótipo</h2>
+
+            <p>
+                Esta avaliação não inicia o teste guiado nem registra
+                métricas de tempo e cliques. Use-a se você já experimentou
+                o aplicativo. As opiniões serão analisadas separadamente
+                da pesquisa comparativa.
+            </p>
+
+            <!-- Formulário de avaliação -->
+            <form class="stack" id="feedback-form">
+
+                <!-- Consentimento -->
+                <label class="option">
+
+                    <input type="checkbox" required id="consent">
+
+                    Já utilizei o protótipo e concordo em participar
+                    voluntariamente.
+
+                </label>
+
+                <p class="muted small">
+                    Não solicitamos nome ou e-mail.
+                    Não inclua dados pessoais nos comentários.
+                </p>
+
+                <!-- Avaliações geradas pelo JavaScript -->
+                <div id="ratings" class="stack"></div>
+
+                <!-- Dificuldades -->
+                <label class="field">
+
+                    Qual foi sua maior dificuldade? (opcional)
+
+                    <textarea
+                        id="difficulty"
+                        maxlength="1000">
+                    </textarea>
+
+                </label>
+
+                <!-- Sugestões -->
+                <label class="field">
+
+                    O que você melhoraria? (opcional)
+
+                    <textarea
+                        id="suggestion"
+                        maxlength="1000">
+                    </textarea>
+
+                </label>
+
+                <!-- Envio da avaliação -->
+                <button class="primary"
+                    id="send"
+                    type="submit">
+
+                    Enviar avaliação
+
+                </button>
+
+                <!-- Feedback do sistema -->
+                <p id="feedback-status" role="status"></p>
+
+                <a class="linkbtn outline" href="index.html">
+                    Voltar ao início
+                </a>
+
+            </form>
+
+        </section>
+
+        <!-- Confirmação de envio -->
+        <section class="panel form-panel" id="thanks" hidden>
+
+            <h1>Obrigado pela sua avaliação!</h1>
+
+            <p id="thanks-text"></p>
+
+            <a class="linkbtn primary" href="index.html">
+                Voltar ao início
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- Acessibilidade - VLibras -->
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+</body>
+
+</html>

@@ -1,1 +1,232 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ConectaCampus | Grupo 4</title><link rel="stylesheet" href="style.css"><script src="inicio.js" defer></script></head><body><main class="site"><header class="sitebar"><a class="wordmark" href="index.html"><span class="brandmark">C</span> ConectaCampus</a><span class="tag">UX Design · Grupo 4</span></header><section class="hero hero-v3"><div class="hero-copy"><span class="kicker">PROJETO ACADÊMICO · MICROINTERAÇÕES</span><h1>Organize seus prazos.<br>Com mais clareza.</h1><p>Explore uma experiência de organização acadêmica e contribua com a pesquisa de usabilidade.</p><a class="linkbtn primary" href="teste.html">Iniciar teste de usabilidade →</a><small>Participação voluntária · Sem nome ou e-mail</small></div><div class="hero-art" aria-hidden="true"><svg viewBox="0 0 300 240" fill="none"><rect x="40" y="26" width="220" height="190" rx="24" fill="#fff" fill-opacity=".10" stroke="#fff" stroke-opacity=".28"/><rect x="61" y="47" width="178" height="148" rx="14" fill="#f5f8ff"/><path d="M61 61a14 14 0 0 1 14-14h150a14 14 0 0 1 14 14v23H61z" fill="#91b2ff"/><rect x="82" y="62" width="8" height="8" rx="4" fill="#fff"/><rect x="98" y="62" width="8" height="8" rx="4" fill="#fff"/><rect x="80" y="104" width="140" height="12" rx="6" fill="#b6c8e9"/><rect x="80" y="128" width="88" height="9" rx="4.5" fill="#d4def1"/><rect x="80" y="151" width="118" height="9" rx="4.5" fill="#d4def1"/><circle cx="229" cy="174" r="34" fill="#dce8ff"/><path d="M229 155v19l12 7" stroke="#244cc1" stroke-width="4" stroke-linecap="round"/><circle cx="229" cy="174" r="23" stroke="#244cc1" stroke-width="3"/></svg></div></section><section class="tiles home-tiles"><article class="panel"><span class="feature-icon" aria-hidden="true">01</span><span class="tag">Exploração livre</span><h2>Experimente o aplicativo</h2><p>Explore os lembretes e as situações simuladas, sem iniciar a pesquisa comparativa.</p><a class="linkbtn outline" href="prototipo.html">Abrir protótipo</a></article><article class="panel"><span class="feature-icon" aria-hidden="true">02</span><span class="tag">Pesquisa guiada</span><h2>Teste de usabilidade</h2><p>Realize as tarefas nas duas interfaces. A avaliação aparece depois de cada etapa.</p><a class="linkbtn outline" href="teste.html">Iniciar ou continuar teste</a></article><article class="panel"><span class="feature-icon" aria-hidden="true">03</span><span class="tag">Avaliação</span><h2>Avaliar experiência</h2><p>Já utilizou o protótipo? Retome uma avaliação pendente ou envie sua opinião sobre a exploração livre.</p><a class="linkbtn outline" id="evaluation-link" href="avaliacao.html">Acessar avaliação</a><small id="pending-message" role="status"></small></article></section><section class="panel how"><h2>Como participar</h2><div class="steps"><div><b>1</b><span>Explore as interfaces</span></div><div><b>2</b><span>Realize as tarefas</span></div><div><b>3</b><span>Avalie sua experiência</span></div></div></section><footer class="sitefoot footer-v3"><span>ConectaCampus · Protótipo acadêmico fictício · Nenhuma notificação real é enviada.</span><a href="dashboard.html">Área da equipe →</a></footer></main></body></html>
+ 
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>ConectaCampus | Grupo 4</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="inicio.js" defer></script>
+</head>
+
+<body>
+
+    <main class="site">
+
+        <!-- Cabeçalho -->
+        <header class="sitebar">
+
+            <a class="wordmark" href="index.html">
+                <span class="brandmark">C</span>
+                ConectaCampus
+            </a>
+
+            <span class="tag">UX Design · Grupo 4</span>
+
+        </header>
+
+        <!-- Banner principal -->
+        <section class="hero hero-v3">
+
+            <div class="hero-copy">
+
+                <span class="kicker">
+                    PROJETO ACADÊMICO · MICROINTERAÇÕES
+                </span>
+
+                <h1>
+                    Organize seus prazos.<br>
+                    Com mais clareza.
+                </h1>
+
+                <p>
+                    Explore uma experiência de organização acadêmica
+                    e contribua com a pesquisa de usabilidade.
+                </p>
+
+                <a class="linkbtn primary" href="teste.html">
+                    Iniciar teste de usabilidade →
+                </a>
+
+                <small>
+                    Participação voluntária · Sem nome ou e-mail
+                </small>
+
+            </div>
+
+            <!-- Ilustração do banner -->
+            <div class="hero-art" aria-hidden="true">
+
+                <svg viewBox="0 0 300 240" fill="none">
+
+                    <rect x="40" y="26" width="220" height="190"
+                        rx="24" fill="#fff" fill-opacity=".10"
+                        stroke="#fff" stroke-opacity=".28"/>
+
+                    <rect x="61" y="47" width="178" height="148"
+                        rx="14" fill="#f5f8ff"/>
+
+                    <path d="M61 61a14 14 0 0 1 14-14h150a14 14 0 0 1 14 14v23H61z"
+                        fill="#91b2ff"/>
+
+                    <rect x="82" y="62" width="8" height="8"
+                        rx="4" fill="#fff"/>
+
+                    <rect x="98" y="62" width="8" height="8"
+                        rx="4" fill="#fff"/>
+
+                    <rect x="80" y="104" width="140" height="12"
+                        rx="6" fill="#b6c8e9"/>
+
+                    <rect x="80" y="128" width="88" height="9"
+                        rx="4.5" fill="#d4def1"/>
+
+                    <rect x="80" y="151" width="118" height="9"
+                        rx="4.5" fill="#d4def1"/>
+
+                    <circle cx="229" cy="174" r="34"
+                        fill="#dce8ff"/>
+
+                    <path d="M229 155v19l12 7"
+                        stroke="#244cc1"
+                        stroke-width="4"
+                        stroke-linecap="round"/>
+
+                    <circle cx="229" cy="174" r="23"
+                        stroke="#244cc1"
+                        stroke-width="3"/>
+
+                </svg>
+
+            </div>
+
+        </section>
+
+        <!-- Opções de navegação -->
+        <section class="tiles home-tiles">
+
+            <!-- Exploração livre -->
+            <article class="panel">
+
+                <span class="feature-icon" aria-hidden="true">
+                    01
+                </span>
+
+                <span class="tag">Exploração livre</span>
+
+                <h2>Experimente o aplicativo</h2>
+
+                <p>
+                    Explore os lembretes e as situações simuladas,
+                    sem iniciar a pesquisa comparativa.
+                </p>
+
+                <a class="linkbtn outline" href="prototipo.html">
+                    Abrir protótipo
+                </a>
+
+            </article>
+
+            <!-- Pesquisa comparativa -->
+            <article class="panel">
+
+                <span class="feature-icon" aria-hidden="true">
+                    02
+                </span>
+
+                <span class="tag">Pesquisa guiada</span>
+
+                <h2>Teste de usabilidade</h2>
+
+                <p>
+                    Realize as tarefas nas duas interfaces.
+                    A avaliação aparece depois de cada etapa.
+                </p>
+
+                <a class="linkbtn outline" href="teste.html">
+                    Iniciar ou continuar teste
+                </a>
+
+            </article>
+
+            <!-- Avaliação independente -->
+            <article class="panel">
+
+                <span class="feature-icon" aria-hidden="true">
+                    03
+                </span>
+
+                <span class="tag">Avaliação</span>
+
+                <h2>Avaliar experiência</h2>
+
+                <p>
+                    Já utilizou o protótipo? Retome uma avaliação
+                    pendente ou envie sua opinião sobre a exploração livre.
+                </p>
+
+                <a class="linkbtn outline"
+                    id="evaluation-link"
+                    href="avaliacao.html">
+
+                    Acessar avaliação
+
+                </a>
+
+                <small id="pending-message" role="status"></small>
+
+            </article>
+
+        </section>
+
+        <!-- Instruções de participação -->
+        <section class="panel how">
+
+            <h2>Como participar</h2>
+
+            <div class="steps">
+
+                <div>
+                    <b>1</b>
+                    <span>Explore as interfaces</span>
+                </div>
+
+                <div>
+                    <b>2</b>
+                    <span>Realize as tarefas</span>
+                </div>
+
+                <div>
+                    <b>3</b>
+                    <span>Avalie sua experiência</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Rodapé -->
+        <footer class="sitefoot footer-v3">
+
+            <span>
+                ConectaCampus · Protótipo acadêmico fictício ·
+                Nenhuma notificação real é enviada.
+            </span>
+
+            <a href="dashboard.html">
+                Área da equipe →
+            </a>
+
+        </footer>
+
+    </main>
+
+    <!-- Acessibilidade - VLibras -->
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+</body>
+
+</html>

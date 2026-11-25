@@ -1,46 +1,376 @@
+
 <!doctype html>
 <html lang="pt-BR">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#173f9e"><title>ConectaCampus · Lembretes</title><link rel="stylesheet" href="style.css"><script src="script.js" defer></script></head>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#173f9e">
+
+    <title>ConectaCampus · Lembretes</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
 <body>
-<main class="workspace">
-  <section class="phone" aria-label="Protótipo ConectaCampus">
-    <header class="app-header"><div class="brand"><span class="brandmark" aria-hidden="true">C</span> ConectaCampus</div><p>Área do estudante</p></header>
-    <div class="app-content">
-      <p class="eyebrow">MINHAS ATIVIDADES / DETALHES</p>
-      <h1>Detalhes da atividade</h1>
-      <article class="activity panel"><span class="tag">UX DESIGN</span><h2>Projeto prático – UX Design</h2><p>Microinterações · Grupo 4</p><div class="deadline"><span aria-hidden="true">▦</span><div><small>Prazo de entrega</small><strong id="deadline"></strong></div></div></article>
-      <section class="panel reminder" aria-labelledby="reminder-title" id="reminder">
-        <div class="section-heading"><svg class="bell" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg><h2 id="reminder-title">Lembrete de entrega</h2></div>
-        <div class="status-line"><div><p class="state" id="state">Nenhum lembrete ativo</p><p class="muted" id="state-detail">Programe um aviso antes do prazo.</p></div><button class="switch" role="switch" aria-checked="false" aria-label="Lembrete de entrega" id="switch"><span></span></button></div>
-        <p class="schedule-summary small" id="schedule-summary" hidden></p><button class="primary" id="configure">Ativar lembrete</button><button class="outline danger" id="disable" hidden>Desativar lembrete</button>
-        <button type="button" class="outline" id="undo" hidden>Desfazer desativação</button><div id="notice" class="notice" role="status" aria-live="polite" aria-atomic="true"></div>
-        <div id="page-error" class="error" role="alert" aria-atomic="true"></div>
-      </section>
-      <section class="panel context"><h2>Sobre a atividade</h2><p>Elaborar uma proposta de melhoria de microinterações para o ConectaCampus.</p><div class="file"><span aria-hidden="true">▤</span><div><strong>Orientações do projeto</strong><small>Material ilustrativo</small></div></div></section>
-    </div>
-    <footer class="app-footer">ConectaCampus <span>·</span> Protótipo acadêmico</footer><div class="demo-evaluation"><a class="linkbtn primary" href="avaliacao.html?demo=1">Concluir exploração e avaliar</a><a class="linkbtn outline" href="index.html">Voltar ao início</a></div>
-    <dialog id="editor" aria-labelledby="editor-title">
-      <form id="editor-form" novalidate>
-        <div class="dialog-head"><div><p class="eyebrow">LEMBRETE DE ENTREGA</p><h2 id="editor-title">Configurar lembrete</h2></div><button type="button" class="close" id="close" aria-label="Fechar configuração">×</button></div>
-        <p class="muted">Escolha quando deseja receber o aviso.</p>
-        <div class="presets" aria-label="Atalhos de agendamento"><button type="button" data-hours="24">1 dia antes</button><button type="button" data-hours="2">2 horas antes</button><button type="button" id="custom">Personalizar</button></div>
-        <div class="fields"><label>Data<input id="date" type="date" required aria-describedby="validation"></label><label>Horário<input id="time" type="time" required aria-describedby="validation"></label></div>
-        <p class="muted small" id="limit"></p><p class="error" id="validation" aria-live="polite"></p>
-        <div class="error" id="save-error" role="alert" aria-atomic="true"></div>
-        <button type="button" class="outline" id="open-settings" hidden>Abrir configurações (simulação)</button>
-        <button class="primary" id="save" type="submit">Salvar lembrete</button>
-        <p id="processing" role="status" aria-live="polite" class="small muted"></p>
-        <button class="outline" id="cancel" type="button">Cancelar</button>
-      </form>
-    </dialog>
-  </section>
-  <aside class="lab" aria-labelledby="lab-title"><span class="lab-label">GRUPO 4 · AMBIENTE DE DEMONSTRAÇÃO</span><h2 id="lab-title">Teste a microinteração</h2><p>Controles de simulação separados da interface do estudante. Use-os para demonstrar as situações alternativas.</p>
-    <label class="option"><input type="checkbox" id="offline"> Falhar na próxima operação</label>
-    <label class="option"><input type="checkbox" id="blocked"> Simular notificações desativadas</label>
-    <label class="option"><input type="checkbox" id="motion"> Reduzir movimento</label>
-    <button id="simulate" class="outline" disabled>Simular disparo do lembrete</button>
-    <button id="reset" class="outline">Reiniciar demonstração</button>
-    <hr><p class="small">O agendamento é salvo neste navegador. Não há servidor nem envio real de notificações. <a href="teste.html">Abrir teste com participantes</a> · <a href="index.html">Início</a>.</p>
-  </aside>
-</main>
-</body></html>
+
+    <main class="workspace">
+
+        <!-- Interface do estudante -->
+        <section class="phone" aria-label="Protótipo ConectaCampus">
+
+            <header class="app-header">
+
+                <div class="brand">
+                    <span class="brandmark" aria-hidden="true">C</span>
+                    ConectaCampus
+                </div>
+
+                <p>Área do estudante</p>
+
+            </header>
+
+            <div class="app-content">
+
+                <p class="eyebrow">MINHAS ATIVIDADES / DETALHES</p>
+
+                <h1>Detalhes da atividade</h1>
+
+                <!-- Informações da atividade -->
+                <article class="activity panel">
+
+                    <span class="tag">UX DESIGN</span>
+
+                    <h2>Projeto prático – UX Design</h2>
+
+                    <p>Microinterações · Grupo 4</p>
+
+                    <div class="deadline">
+
+                        <span aria-hidden="true">▦</span>
+
+                        <div>
+                            <small>Prazo de entrega</small>
+                            <strong id="deadline"></strong>
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- Lembrete de entrega -->
+                <section class="panel reminder"
+                    aria-labelledby="reminder-title"
+                    id="reminder">
+
+                    <div class="section-heading">
+
+                        <svg class="bell"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true">
+
+                            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/>
+
+                        </svg>
+
+                        <h2 id="reminder-title">
+                            Lembrete de entrega
+                        </h2>
+
+                    </div>
+
+                    <div class="status-line">
+
+                        <div>
+
+                            <p class="state" id="state">
+                                Nenhum lembrete ativo
+                            </p>
+
+                            <p class="muted" id="state-detail">
+                                Programe um aviso antes do prazo.
+                            </p>
+
+                        </div>
+
+                        <button class="switch"
+                            role="switch"
+                            aria-checked="false"
+                            aria-label="Lembrete de entrega"
+                            id="switch">
+
+                            <span></span>
+
+                        </button>
+
+                    </div>
+
+                    <p class="schedule-summary small" id="schedule-summary" hidden></p>
+
+                    <button class="primary" id="configure">
+                        Ativar lembrete
+                    </button>
+
+                    <button class="outline danger"
+                        id="disable"
+                        hidden>
+                        Desativar lembrete
+                    </button>
+
+                    <button type="button"
+                        class="outline"
+                        id="undo"
+                        hidden>
+                        Desfazer desativação
+                    </button>
+
+                    <!-- Feedback da microinteração -->
+                    <div id="notice" class="notice" role="status" aria-live="polite" aria-atomic="true"></div>
+
+                    <div id="page-error" class="error" role="alert" aria-atomic="true"></div>
+
+                </section>
+
+                <!-- Contexto acadêmico -->
+                <section class="panel context">
+
+                    <h2>Sobre a atividade</h2>
+
+                    <p>
+                        Elaborar uma proposta de melhoria de
+                        microinterações para o ConectaCampus.
+                    </p>
+
+                    <div class="file">
+
+                        <span aria-hidden="true">▤</span>
+
+                        <div>
+                            <strong>Orientações do projeto</strong>
+                            <small>Material ilustrativo</small>
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+            <!-- Rodapé do aplicativo -->
+            <footer class="app-footer">
+                ConectaCampus <span>·</span> Protótipo acadêmico
+            </footer>
+
+            <!-- Avaliação após a exploração -->
+            <div class="demo-evaluation">
+
+                <a class="linkbtn primary"
+                    href="avaliacao.html?demo=1">
+                    Concluir exploração e avaliar
+                </a>
+
+                <a class="linkbtn outline"
+                    href="index.html">
+                    Voltar ao início
+                </a>
+
+            </div>
+
+            <!-- Configuração do lembrete -->
+            <dialog id="editor" aria-labelledby="editor-title">
+
+                <form id="editor-form" novalidate>
+
+                    <div class="dialog-head">
+
+                        <div>
+
+                            <p class="eyebrow">
+                                LEMBRETE DE ENTREGA
+                            </p>
+
+                            <h2 id="editor-title">
+                                Configurar lembrete
+                            </h2>
+
+                        </div>
+
+                        <button type="button"
+                            class="close"
+                            id="close"
+                            aria-label="Fechar configuração">
+                            ×
+                        </button>
+
+                    </div>
+
+                    <p class="muted">
+                        Escolha quando deseja receber o aviso.
+                    </p>
+
+                    <!-- Atalhos de agendamento -->
+                    <div class="presets"
+                        aria-label="Atalhos de agendamento">
+
+                        <button type="button" data-hours="24">
+                            1 dia antes
+                        </button>
+
+                        <button type="button" data-hours="2">
+                            2 horas antes
+                        </button>
+
+                        <button type="button" id="custom">
+                            Personalizar
+                        </button>
+
+                    </div>
+
+                    <!-- Data e horário -->
+                    <div class="fields">
+
+                        <label>
+
+                            Data
+
+                            <input id="date"
+                                type="date"
+                                required
+                                aria-describedby="validation">
+
+                        </label>
+
+                        <label>
+
+                            Horário
+
+                            <input id="time"
+                                type="time"
+                                required
+                                aria-describedby="validation">
+
+                        </label>
+
+                    </div>
+
+                    <p class="muted small" id="limit"></p>
+
+                    <p class="error" id="validation" aria-live="polite"></p>
+
+                    <div class="error" id="save-error" role="alert" aria-atomic="true"></div>
+
+                    <button type="button"
+                        class="outline"
+                        id="open-settings"
+                        hidden>
+                        Abrir configurações (simulação)
+                    </button>
+
+                    <button class="primary"
+                        id="save"
+                        type="submit">
+                        Salvar lembrete
+                    </button>
+
+                    <p id="processing" role="status" aria-live="polite" class="small muted"></p>
+
+                    <button class="outline"
+                        id="cancel"
+                        type="button">
+                        Cancelar
+                    </button>
+
+                </form>
+
+            </dialog>
+
+        </section>
+
+        <!-- Painel de demonstração -->
+        <aside class="lab" aria-labelledby="lab-title">
+
+            <span class="lab-label">
+                GRUPO 4 · AMBIENTE DE DEMONSTRAÇÃO
+            </span>
+
+            <h2 id="lab-title">
+                Teste a microinteração
+            </h2>
+
+            <p>
+                Controles de simulação separados da interface do estudante.
+                Use-os para demonstrar as situações alternativas.
+            </p>
+
+            <label class="option">
+                <input type="checkbox" id="offline">
+                Falhar na próxima operação
+            </label>
+
+            <label class="option">
+                <input type="checkbox" id="blocked">
+                Simular notificações desativadas
+            </label>
+
+            <label class="option">
+                <input type="checkbox" id="motion">
+                Reduzir movimento
+            </label>
+
+            <button id="simulate"
+                class="outline"
+                disabled>
+                Simular disparo do lembrete
+            </button>
+
+            <button id="reset" class="outline">
+                Reiniciar demonstração
+            </button>
+
+            <hr>
+
+            <p class="small">
+
+                O agendamento é salvo neste navegador.
+                Não há servidor nem envio real de notificações.
+
+                <a href="teste.html">
+                    Abrir teste com participantes
+                </a>
+
+                ·
+
+                <a href="index.html">
+                    Início
+                </a>.
+
+            </p>
+
+        </aside>
+
+    </main>
+
+    <!-- Acessibilidade - VLibras -->
+    <!-- Carrega somente fora do iframe da pesquisa -->
+    <script>
+        if (window.self === window.top) {
+            const vlibras = document.createElement('script');
+
+            vlibras.src =
+                'https://vlibras.gov.br/app/vlibras-plugin.js';
+
+            document.body.appendChild(vlibras);
+        }
+    </script>
+
+</body>
+
+</html>
